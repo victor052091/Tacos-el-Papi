@@ -1,0 +1,118 @@
+/*MAIN BACKGROUND CSS By Victor M Juarez*/
+@import url(http://fonts.googleapis.com/css?family=Tangerine);
+.slideshow, .slideshow:after { 
+    position: relative;
+    width: 100%;
+    height: 700px;
+    top: -10px;
+    left: 0;
+    z-index: 0; 
+}
+.slideshow:after { 
+    content: '';
+    background: transparent url(slideshow/image4.jpg) repeat top left; 
+}
+.slideshow li span { 
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    animation: ImageAnimation 36s linear infinite 0s; 
+}
+.slideshow li {
+    list-style: none;
+}
+/*BACKGROUND IMAGES*/
+.slideshow li:nth-child(1) span { 
+    background-image: url(slideshow/img01.jpg) 
+}
+.slideshow li:nth-child(2) span { 
+    background-image: url(slideshow/img02.jpg);
+    animation-delay: 6s; 
+}
+.slideshow li:nth-child(3) span { 
+    background-image: url(slideshow/img03.jpg);
+    animation-delay: 12s; 
+}
+.slideshow li:nth-child(4) span { 
+    background-image: url(slideshow/img04.jpg);
+    animation-delay: 18s; 
+}
+.slideshow li:nth-child(5) span { 
+    background-image: url(slideshow/img05.jpg);
+    animation-delay: 24s; 
+}
+.slideshow li:nth-child(6) span { 
+    background-image: url(slideshow/img06.jpg);
+    animation-delay: 30s; 
+}
+/*IMAGE ANIMATION*/
+@keyframes ImageAnimation { 
+0% { 
+    opacity: 0; animation-timing-function: ease-in; 
+ }
+8% { 
+    opacity: 1; animation-timing-function: ease-out; 
+ }
+17% { 
+    opacity: 1;
+ }
+25% { 
+    opacity: 0;
+ }
+100% { 
+    opacity: 0;
+ }
+}
+
+/*For browsers that don't support animations*/
+/*It shows the last slideshow image as background of the page without animation*/
+.no-cssanimations .slideshow li span{
+	opacity: 1;
+}
+/*TRANSPARENT CONTAINER*/
+.tc {
+    border-radius: 50px;
+    height: auto;
+    width: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 5;
+    text-align: center; 
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 5px;
+    line-height: 0.1;
+}
+.tc h1 {
+    color: #cc330d;
+    font-family: 'Tangerine', serif;
+    font-size: 13vw;
+    text-align: center;
+    text-shadow: 5px 5px 5px gray;
+}
+.tc p {
+    color: black;
+    font-family: 'Tangerine', serif;
+    font-size: 8vw; 
+}
+@media (max-width:360px) {
+.tc {
+    width: 80%;   
+ }
+.tc h1 {
+    font-size: 20vw;    
+ }
+.tc p {
+    font-size: 10vw;    
+}    
+}
